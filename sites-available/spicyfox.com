@@ -2,15 +2,11 @@ server {
 	listen   80;
 	root /var/www/spicyfox.com;
 	index portal.php;
-	server_name www.spicyfox.com;
-
-	location / {
-	try_files $uri $uri/ /portal.php;
-	}
+	server_name spicyfox.com;
 
 	error_page 404 /404.html;
 
-  	location ~ \.php$ {
+  	location / {
         proxy_set_header X-Real-IP  $remote_addr;
         proxy_set_header X-Forwarded-For $remote_addr;
         proxy_set_header Host $host;
