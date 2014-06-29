@@ -13,7 +13,6 @@ server {
         proxy_pass http://127.0.0.1:8070;
         }
 
-
 	location ~ /\.ht {
 		deny all;
 	}
@@ -21,7 +20,7 @@ server {
 
 server {
 	listen   80;
-	root /var/lib/tomcat6/webapps/war;
+	root /var/lib/tomcat6/webapps/house.spicyfox.com;
 	server_name house.spicyfox.com;
 
 	location / {
@@ -30,5 +29,4 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 	proxy_pass http://127.0.0.1:8080;
 	}
-
 }
